@@ -51,7 +51,7 @@ describe('SequenceService', () => {
   });
 
   fit('should calculate average correctly', () => {
-    const expectedAverage = 7;
+    const expectedAverage = 8.4;
     const sequence = [3, 10, 5, 16, 8];
     const sequenceAverage = service.calculateAverage(sequence);
     expect(sequenceAverage).toEqual(expectedAverage);

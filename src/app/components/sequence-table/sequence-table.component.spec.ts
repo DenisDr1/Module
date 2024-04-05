@@ -15,13 +15,13 @@ describe('SequenceTableComponent', () => {
 
     fixture = TestBed.createComponent(SequenceTableComponent);
     component = fixture.componentInstance;
+    component.sequence = [1, 2, 3, 4, 5];
     fixture.detectChanges();
   }));
 
   fit('should create', () => {
     expect(component).toBeTruthy();
   });
-
   fit('should split sequence into groups', () => {
     const sequence = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const parameter = 3;
@@ -32,7 +32,7 @@ describe('SequenceTableComponent', () => {
 
   fit('should split sequence into groups with parameter equal to sequence length', () => {
     const sequence = [1, 2, 3, 4, 5];
-    const parameter = sequence.length;
+    const parameter = 5;
     const expectedGroups = [[1, 2, 3, 4, 5]];
     const result = component.splitSequenceIntoGroups(sequence, parameter);
     expect(result).toEqual(expectedGroups);
@@ -49,7 +49,7 @@ describe('SequenceTableComponent', () => {
   fit('should split sequence with parameter greater than sequence length into single groups', () => {
     const sequence = [1, 2, 3, 4, 5];
     const parameter = 10;
-    const expectedGroups = [[1], [2], [3], [4], [5]];
+    const expectedGroups = [[1, 2, 3, 4, 5]];
     const result = component.splitSequenceIntoGroups(sequence, parameter);
     expect(result).toEqual(expectedGroups);
   });
