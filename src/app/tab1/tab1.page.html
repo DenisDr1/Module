@@ -1,17 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Модульна контрольна робота №1 з крос-платформного програмування
     </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав студент групи КН-31 Драчук Денис</ion-title>
+    <ion-title>Варіант 14</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title size="large">Завдання</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-card-content>
+      <p>Створити сервіс для розрахунку числової послідовності, яка задається за такими правилами:  Перше число послідовності - довільне непарне число від 3 до 99(вводить користувач).  Кожен наступний елемент послідовності визначається через попередній елемент р, і дорівнює 3p+1, якщо p непарне число, р/2, якщо р парне число. Кількість чисел у послідовності вводить користувач. Послідовність вивести у таблиці. Обрахувати суму, добуток та середнє значення послідовності.</p>
+      <app-input-form (inputData)="receiveInputData($event)"></app-input-form>
+      <app-sequence-table [sequence]="sequence" [sum]="sum" [product]="product" [average]="average"></app-sequence-table>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

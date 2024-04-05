@@ -1,0 +1,15 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Введення даних</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Довільне непарне число від 3 до 99</ion-label>
+      <ion-input type="number" [formControl]="firstNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Кількість чисел у послідовності</ion-label>
+      <ion-input type="number" [formControl]="sequenceLength"></ion-input>  
+    </ion-item>
+  </ion-card-content>
+</ion-card>

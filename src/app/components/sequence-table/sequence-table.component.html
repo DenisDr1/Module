@@ -1,0 +1,34 @@
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>Таблиця</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row *ngFor="let group of splitSequenceIntoGroups(sequence, 5)">
+          <ion-col *ngFor="let num of group">{{ num }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+</ion-card>  
+
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>Результати обчислень</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label slot="start">Сума:</ion-label>
+          <ion-text slot="start">{{ sum }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start">Добуток:</ion-label>
+          <ion-text slot="start">{{ product }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start">Середнє значення:</ion-label>
+          <ion-text slot="start">{{ average }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+</ion-card>
